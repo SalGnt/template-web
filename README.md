@@ -73,3 +73,18 @@ export default defineConfig([
   },
 ]);
 ```
+
+## Testing
+
+Use Node 22.22.2+, 24.15.0+, or 26+ for the installed testing dependencies.
+
+[Vitest](https://vitest.dev/guide/) shares the Vite configuration and runs tests in jsdom. React Testing Library, user-event, and jest-dom provide component rendering, user interactions, and DOM assertions.
+
+```sh
+pnpm test       # Watch mode during development
+pnpm test:run   # Run once locally or in CI
+```
+
+Use `*.test.ts` for unit tests and `*.test.tsx` for component tests under `src`. Import `test`, `expect`, and other test APIs explicitly from `vitest`. The shared setup in `src/test/setup.ts` loads DOM matchers and cleans up rendered components after each test. Tests are type-checked by `pnpm build`.
+
+Keep route tests outside `src/routes` (for example, `src/test/about.test.tsx`) so the file router does not discover them as routes. Other tests can live beside the module they exercise. The example tests the existing About dialog opening, closing, and restoring focus. jsdom does not verify visual layout; use a browser for that.
