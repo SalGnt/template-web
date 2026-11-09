@@ -67,4 +67,4 @@ These are repository defaults. Follow the user's explicit task and applicable in
 
 ## Derived projects
 
-When asked to initialize a product, replace demo content and metadata and document the product scope, API contracts, environment setup, design choices, and deployment requirements as they become known. Keep durable shared conventions here and Claude-specific guidance in `CLAUDE.md`. Keep task transcripts and temporary plans out of these files.
+When asked to initialize a product, replace demo content and metadata (including the `index.html` head, `public/manifest.webmanifest`, and the placeholder PNG icons in `public/`) and document the product scope, API contracts, environment setup, design choices, and deployment requirements as they become known. Keep durable shared conventions here and Claude-specific guidance in `CLAUDE.md`. Keep task transcripts and temporary plans out of these files.
